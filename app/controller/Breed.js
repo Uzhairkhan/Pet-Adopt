@@ -12,6 +12,7 @@ module.exports.list = (req, res) => {
 
 module.exports.create = (req, res) => {
   const body = req.body;
+  console.log(req.body);
   const breed = new Breed(body);
 
   breed
@@ -22,4 +23,26 @@ module.exports.create = (req, res) => {
     .catch((err) => {
       res.send(err);
     });
+};
+
+module.exports.show = (req, res) => {
+  const id = req.params.id;
+  Breed.findOne({ _id: id })
+    .then((breed) => res.json(breed))
+    .catch((err) => res.send(err));
+};
+
+module.exports.update = (req, res) => {
+  const id = req.params.id;
+  const body = req.body;
+  Breed.findOneAndUpdate({ _id: id }, body, { new: true })
+    .then((updated_breed) => res.json(updated_breed))
+    .catch((err) => err);
+};
+
+module.exports.delete = (req, res) => {
+  const id = req.id;
+  Breed.findOneAndDelete({ _id: id })
+    .then((del_breed) => res.json(del_breed))
+    .catch((err) => res.send(err));
 };

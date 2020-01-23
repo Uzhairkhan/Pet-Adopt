@@ -1,7 +1,7 @@
-const { Type } = require("../model/AnimalType");
+const { Category } = require("../model/AnimalType");
 
 module.exports.list = (req, res) => {
-  Type.find()
+  Category.find()
     .then((types) => {
       res.json(types);
     })
@@ -12,9 +12,10 @@ module.exports.list = (req, res) => {
 
 module.exports.create = (req, res) => {
   const body = req.body;
-  const type = new Type(body);
+  console.log(body);
+  const category = new Category(body);
 
-  type
+  category
     .save()
     .then((type) => {
       res.json(type);
@@ -27,7 +28,7 @@ module.exports.create = (req, res) => {
 module.exports.show = (req, res) => {
   const id = req.params.id;
 
-  Type.findOne({ _id: id })
+  Category.findOne({ _id: id })
     .then((type) => {
       res.json(type);
     })
@@ -40,7 +41,7 @@ module.exports.update = (req, res) => {
   const id = req.params.id;
   const body = req.body;
 
-  Type.findOneAndUpdate({ _id: id }, body, { new: true })
+  Category.findOneAndUpdate({ _id: id }, body, { new: true })
     .then((type) => {
       res.json(type);
     })
@@ -52,7 +53,7 @@ module.exports.update = (req, res) => {
 module.exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Type.findOneAndDelete({ _id: id })
+  Category.findOneAndDelete({ _id: id })
     .then((type) => {
       res.json(type);
     })

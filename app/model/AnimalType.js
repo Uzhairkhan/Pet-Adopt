@@ -1,14 +1,14 @@
 const mongoose = require("mongoose");
 
-const animalType = new mongoose.Schema({
+const animalSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
   }
 });
 
-const Type = mongoose.model("Type", animalType);
+const Category = mongoose.model("Category", animalSchema);
 
 module.exports = {
-  Type
+  Category
 };

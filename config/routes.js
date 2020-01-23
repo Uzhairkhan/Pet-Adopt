@@ -11,3 +11,10 @@ router.delete("/types/:id", typesController.delete);
 
 router.get("/breeds", breedsController.list);
 router.post("/breeds", breedsController.create);
+router.get("breeds/:id", breedsController.show);
+router.put("/breeds/:id", breedsController.update);
+router.delete("/breeds/:id", breedsController.delete);
+
+module.exports = {
+  router
+};
