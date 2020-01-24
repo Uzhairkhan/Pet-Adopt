@@ -26,20 +26,30 @@ const petSchema = new mongoose.Schema({
     default: false
   },
   animal_type: {
-    type: Schema.Types.ObjectId,
-    ref: "Type"
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Category"
   },
   breed: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Breed"
   },
   user: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "User"
   },
   createdAt: {
     type: Date,
     default: Date.now()
+  }
+});
+
+petSchema.pre("save", function(next) {
+  const pet = this;
+  console.log(pet);
+  if (pet.isNew) {
+    next();
+  } else {
+    return Promise.reject("Already Created");
   }
 });
 

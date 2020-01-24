@@ -1,13 +1,16 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const breedSchema = new Schema({
+const breedSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
   },
   info: {
     type: String
+  },
+  animal_type: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Category"
   }
 });
 

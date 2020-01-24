@@ -2,6 +2,8 @@ const { Breed } = require("../model/Breed");
 
 module.exports.list = (req, res) => {
   Breed.find()
+    .populate("animal_type", ["name"])
+    .select("name animal_type")
     .then((breeds) => {
       breeds ? res.json(breeds) : {};
     })
@@ -12,7 +14,6 @@ module.exports.list = (req, res) => {
 
 module.exports.create = (req, res) => {
   const body = req.body;
-  console.log(req.body);
   const breed = new Breed(body);
 
   breed
@@ -41,7 +42,7 @@ module.exports.update = (req, res) => {
 };
 
 module.exports.delete = (req, res) => {
-  const id = req.id;
+  const id = req.params.id;
   Breed.findOneAndDelete({ _id: id })
     .then((del_breed) => res.json(del_breed))
     .catch((err) => res.send(err));

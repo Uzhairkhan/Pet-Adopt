@@ -12,7 +12,6 @@ module.exports.list = (req, res) => {
 
 module.exports.create = (req, res) => {
   const body = req.body;
-  console.log(body);
   const category = new Category(body);
 
   category
