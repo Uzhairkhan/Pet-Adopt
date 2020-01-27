@@ -6,6 +6,8 @@ import Home from "./components/Home";
 import About from "./components/About";
 import LoginShow from "./components/user/login/LoginShow";
 import RegShow from "./components/user/register/RegisterShow";
+import PetShow from "./components/pets/PetShow";
+import PetAdd from "./components/pets/PetAdd";
 
 function App() {
   return (
@@ -57,13 +59,15 @@ function App() {
           </div>
         </nav>
       </div>
-      
+
       <div id="petShow">
         <Switch>
           <Route path="/" component={Home} exact={true} />
           <Route path="/about" component={About} />
           <Route path="/login" component={LoginShow} />
           <Route path="/signup" component={RegShow} />
+          <Route path="/pets" component={PetShow} exact="true" />
+          <Route path="/pets/add" component={PetAdd} />
         </Switch>
       </div>
     </BrowserRouter>

@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <div className="container">
-        <div align="center" style={{ fontFamily: "Lucida Calligraphy" }}>
+        <div align="center" style={{ fontFamily: "Calisto MT" }}>
           <h3>Welcome to Pet@dopt</h3>
           <p></p>
           <p></p>

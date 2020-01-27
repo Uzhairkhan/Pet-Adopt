@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
         style={{ padding: "20px" }}
       >
         <form>
-          <div className="form-group font-weight-bold">
+          <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
               id="email"
@@ -28,7 +28,7 @@ class LoginForm extends React.Component {
               style={{ textAlign: "center" }}
             />
           </div>
-          <div className="form-group font-weight-bold">
+          <div className="form-group ">
             <label htmlFor="password">Password</label>
             <input
               id="password"
@@ -38,7 +38,7 @@ class LoginForm extends React.Component {
               style={{ textAlign: "center" }}
             />
           </div>
-          <input className="btn btn-secondary" type="submit" value="Log-In" />
+          <input className="btn btn-primary" type="submit" value="Log-In" />
         </form>
         <p></p>
         <h6>Dont have an account?</h6>
