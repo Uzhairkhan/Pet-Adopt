@@ -8,7 +8,10 @@ class Form extends React.Component {
 
   render() {
     return (
-      <div className="border shadow rounded col-md-8 offset-md-2 ">
+      <div
+        className="border shadow rounded col-md-8 offset-md-2 "
+        style={{ padding: "20px" }}
+      >
         <form>
           <div className="form-row">
             <div className="form-group col-md-6">
@@ -22,20 +25,20 @@ class Form extends React.Component {
           </div>
 
           <div className="form-group">
-            <label for="inputAddress">Address</label>
+            <label for="city">City</label>
             <input
               type="text"
               className="form-control"
-              id="inputAddress"
+              id="city"
               placeholder="1234 Main St"
             />
           </div>
           <div className="form-group">
-            <label for="inputAddress2">Address 2</label>
+            <label for="rescued_from">Rescued From</label>
             <input
               type="text"
               className="form-control"
-              id="inputAddress2"
+              id="rescued_from"
               placeholder="Apartment, studio, or floor"
             />
           </div>
