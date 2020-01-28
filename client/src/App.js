@@ -66,7 +66,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/login" component={LoginShow} />
           <Route path="/signup" component={RegShow} />
-          <Route path="/pets" component={PetShow} exact="true" />
+          <Route path="/pets" component={PetShow} exact={true}/>
           <Route path="/pets/add" component={PetAdd} />
         </Switch>
       </div>
