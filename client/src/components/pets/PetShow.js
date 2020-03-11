@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {connect } from "react-redux"
 
-export default function PetShow() {
+function PetShow(props) {
+  console.log(props);
   return (
     <div>
       <div className="container">
@@ -11,3 +13,5 @@ export default function PetShow() {
     </div>
   );
 }
+
+export default connect()(PetShow)

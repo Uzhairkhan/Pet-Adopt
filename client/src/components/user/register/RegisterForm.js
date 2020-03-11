@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class RegForm extends React.Component {
   constructor(props) {
@@ -128,6 +129,9 @@ class RegForm extends React.Component {
             Sign in
           </button>
         </form>
+        <p></p>
+        <h6>Already have an account?</h6>
+        <Link to="/login">Login here</Link>
       </div>
     );
   }
