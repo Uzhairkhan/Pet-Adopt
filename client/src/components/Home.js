@@ -1,13 +1,22 @@
 import React from "react";
 import { Container, Row, Col, Badge } from "react-bootstrap";
 import SocialMedia from "./Socialmedia";
+import jumboImg from "../img/jeffrey-buchbinder-aKwozKwSBgA-unsplash.jpg";
 
 function Home() {
   return (
-    <div>
+    <div
+    // style={{
+    //   backgroundImage: `url(${jumboImg})`,
+    //   backgroundSize: "cover"
+    // }}
+    >
       <Container>
         <Row>
-          <Col align="center" style={{ fontFamily: "Calisto MT" }}>
+          <Col
+            align="center"
+            style={{ fontFamily: "Calisto MT", color: "	#F8F8FF" }}
+          >
             <h3>Welcome to Pet@dopt</h3>
             <p></p>
             <p></p>
@@ -24,7 +33,11 @@ function Home() {
           </Col>
         </Row>
         <p></p>
-        <SocialMedia />
+        <Row>
+          <Col>
+            <SocialMedia />
+          </Col>
+        </Row>
       </Container>
     </div>
   );
